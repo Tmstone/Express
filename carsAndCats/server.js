@@ -6,7 +6,7 @@ app.get('/', (request, response) => {
    //response.send('static/index.html');
 });
 app.get('/cars', (request, response) => {
-    response.send('Cars');
+    response.sendFile('Cars.html');
    //response.send('static/index.html');
 });
 app.listen(8000, () => console.log("listening on port 8000"));
