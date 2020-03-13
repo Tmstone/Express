@@ -15,7 +15,7 @@ app.get('/cars', (request, response) => {
 app.get('/cats', (request, response) => {
     response.render('cats');
 })
-app.get('/form', (request, response) => {
+app.get('/cars/new', (request, response) => {
     response.render('form');
 })
 
