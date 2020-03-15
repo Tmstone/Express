@@ -3,7 +3,6 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-//app.set('views', ___dirname + '/views/images');
 app.use(express.static(__dirname + '/static'));
 
 app.get('/', (request, response) => {
