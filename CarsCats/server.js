@@ -18,14 +18,7 @@ app.get('/cars/new', (request, response) => {
     response.render('form');
 })
 app.get('/catone', (request, response) => {
-    response.render('details');
-    //bubble Plum
-    //Bethany
-    ///Minnie
-})
-app.get('/catone', (request, response) => {
     var name = "bubble Plum";
-
     response.render('details', name);
 })
 app.get('/cattwo', (request, response) => {
