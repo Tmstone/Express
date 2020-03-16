@@ -19,19 +19,21 @@ app.get('/cars/new', (request, response) => {
 })
 app.get('/catone', (request, response) => {
     var catsOne = [
-    {name: "bubble Plum" },
-    {age: "3"},
-    {food: "Spaghetti"}
+    {name: "bubble Plum", age: "3" , food: "Spaghetti"}
     ];
     response.render('details', {cats: catsOne});
 })
 app.get('/cattwo', (request, response) => {
-     //Bethany
-    response.render('details');
+    var catsTwo = [
+        {name: "Bethany", age: "4" , food: "Tuna"}
+        ];//Bethany
+    response.render('details', {cats: catsTwo});
 })
 app.get('/catthree', (request, response) => {
-        ///Minnie
-    response.render('details');
+    var catsThree = [
+        {name: "Minnie", age: "1" , food: "Zitti"}
+        ];   ///Minnie
+    response.render('details', {cats: catsThree});
 })
 
 app.listen(8000, () => console.log('listening on port 8000'));

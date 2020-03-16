@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
 </head>
-<body>
-   <h1>Details page for </h1>
+<body> 
+    <h1>Details page for <% cats[0].name %></h1>
+    <a href="/cats">CATS</a>
+        <% for( var cat of cats) { %>
+            <p> <%= cat.name %></p>
+            <p> Age: <%= cat.age %></p>
+            <p> Favorite Food: <%= cat.food %></p>
+    <% } %>
+   
+
 </body>
 </html>
