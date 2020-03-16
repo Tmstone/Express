@@ -18,8 +18,12 @@ app.get('/cars/new', (request, response) => {
     response.render('form');
 })
 app.get('/catone', (request, response) => {
-    var name = "bubble Plum";
-    response.render('details', name);
+    var catsOne = [
+    {name: "bubble Plum" },
+    {age: "3"},
+    {food: "Spaghetti"}
+    ];
+    response.render('details', {cats: catsOne});
 })
 app.get('/cattwo', (request, response) => {
      //Bethany
