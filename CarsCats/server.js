@@ -17,5 +17,24 @@ app.get('/cats', (request, response) => {
 app.get('/cars/new', (request, response) => {
     response.render('form');
 })
+app.get('/catone', (request, response) => {
+    response.render('details');
+    //bubble Plum
+    //Bethany
+    ///Minnie
+})
+app.get('/catone', (request, response) => {
+    var name = "bubble Plum";
+
+    response.render('details', name);
+})
+app.get('/cattwo', (request, response) => {
+     //Bethany
+    response.render('details');
+})
+app.get('/catthree', (request, response) => {
+        ///Minnie
+    response.render('details');
+})
 
 app.listen(8000, () => console.log('listening on port 8000'));
