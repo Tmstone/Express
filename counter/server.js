@@ -5,6 +5,8 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 const session = require('express-session');
+const counter = 0;
+
 app.use(session({
   secret: 'keyboardkitteh',
   resave: false,
