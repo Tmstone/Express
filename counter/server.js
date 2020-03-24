@@ -23,7 +23,7 @@ app.get('/', (request, response) => {
 
 app.post('/addtwo', (request, response) => {
   request.session.count = request.session.count + 2;
-  request.redirect('/');
+  response.redirect('/');
 });
 
 app.post('/reset', (request, response) => {
