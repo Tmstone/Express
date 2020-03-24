@@ -18,7 +18,6 @@ app.get('/', (request, response) => {
     console.log("Value of counter in session ", request.session.counter);
     response.render('index', {counter: count(request) });
 });
-
 /*
 app.post('/', (request, response) => {
   request.session.count = counter;
