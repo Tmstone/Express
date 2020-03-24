@@ -20,12 +20,17 @@ app.get('/', (request, response) => {
     console.log("Value of counter in session ", request.session.counter);
     response.render('index', {counter: count(request) });
 });
-/*
-app.post('/', (request, response) => {
-  request.session.count = counter;
+
+app.post('/addtwo', (request, response) => {
+  request.session.count = request.session.count + 2;
   request.redirect('/');
 });
-*/
+
+app.post('/reset', (request, response) => {
+  request.session.destroy();
+  response.redirect('/');
+});
+
 function count (request) {
   return request.session.counter = request.session.counter ? request.session.counter + 1: 1;
 }
