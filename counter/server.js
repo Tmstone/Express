@@ -1,5 +1,6 @@
 const session = require('express-session');
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 app.use (session({
@@ -13,7 +14,8 @@ const counter = 0;
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 //app.use(express.static(__dirname + '/static'));
-
+app.use(bodyParser.urlencoded({extended: true}));
+ 
 app.get('/', (request, response) => {
     console.log("Value of counter in session ", request.session.counter);
     response.render('index', {counter: count(request) });
