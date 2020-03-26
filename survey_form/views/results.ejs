@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
     <div>
         <h3>Submitted Information</h3>
-        <p>Name: <%= name %> </p> 
-        <p>Dojo Name: <%= dojo %> </p>
-        <p>Favorite Langauge: <%= langage %> </p>
-        <p>Comment: <%= comment %> </p>
+        <p>Name: <%= data.name %> </p> 
+        <p>Dojo Name: <%= data.location %> </p>
+        <p>Favorite Langauge: <%= data.language %> </p>
+        <p>Comment: <%= data.comment %> </p>
 
         <form action="/" method="GET">
             <button>Go Back</button>

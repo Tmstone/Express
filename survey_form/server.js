@@ -7,15 +7,15 @@ app.set('views', __dirname + '/views');
 
 app.use(express.urlencoded({extended: true}));
 
-const data = [];
+//const data = [];
 
 app.get('/', (request, response) => {
     response.render('index');
 });
 
-app.post('/ninja', (request, response) => {
-    console.log(request.body);
-    response.render('results');
+app.post('/results', (request, response) => {
+    var data = request.body;
+    response.render('results', {data});
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`)); 
