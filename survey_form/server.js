@@ -14,7 +14,7 @@ app.get('/', (request, response) => {
 });
 
 app.post('/results', (request, response) => {
-    var data = request.body;
+    const data = request.body;
     response.render('results', {data});
 });
 
