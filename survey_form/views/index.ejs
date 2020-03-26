@@ -12,11 +12,12 @@
             <h1>Survey Form</h1>
         </div>
         <div>
-            <form action="/" method="POST">
+            <form action="/ninja" method="POST">
                 
                 <label for="name"> Name: </label>
-                <input type="text">
-                
+                <input type="text" name="name">
+
+                <label for="location">Dojo Location: </label>
                 <select name="location">
                     <option name="online">Online</option>
                     <option name="mountain">Mountain View</option>
@@ -25,10 +26,16 @@
                     <option name="virginia">Virginia</option>
                 </select>
 
+                <label for="language">Favorite Language: </label>
                 <select name="language">
-                    
+                    <option value="java">Java</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>
+                    <option value="csharp">C#</option>
                 </select>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+
+                <label for="comments">Comment (optional):</label>
+                <textarea name="comment" id="" cols="30" rows="5"></textarea>
                 <button>Submit</button>
             </form>
         </div>
