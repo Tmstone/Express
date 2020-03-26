@@ -15,7 +15,7 @@ app.get('/', (request, response) => {
 
 app.post('/ninja', (request, response) => {
     console.log(request.body);
-    response.render('result');
+    response.render('results');
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`)); 
