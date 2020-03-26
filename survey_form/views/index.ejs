@@ -8,35 +8,39 @@
 </head>
 <body>
     <div class="container">
-        <div>
+        <div class="header">
             <h1>Survey Form</h1>
         </div>
         <div>
             <form action="/results" method="POST">
-                
-                <label for="name"> Name: </label>
-                <input type="text" name="name">
-
-                <label for="location">Dojo Location: </label>
-                <select name="location">
-                    <option name="online">Online</option>
-                    <option name="mountain">Mountain View</option>
-                    <option name="seattle">Seattle</option>
-                    <option name="la">Los Angeles</option>
-                    <option name="virginia">Virginia</option>
-                </select>
-
-                <label for="language">Favorite Language: </label>
-                <select name="language">
-                    <option value="Java">Java</option>
-                    <option value="Javascript">JavaScript</option>
-                    <option value="Python">Python</option>
-                    <option value="C#">C#</option>
-                </select>
-
-                <label for="comments">Comment (optional):</label>
-                <textarea name="comment" id="" cols="30" rows="5"></textarea>
-                <button>Submit</button>
+                <div class="form-group">
+                    <label for="name"> Name: </label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="location">Dojo Location: </label>
+                    <select name="location" class="form-control">
+                        <option name="online">Online</option>
+                        <option name="mountain">Mountain View</option>
+                        <option name="seattle">Seattle</option>
+                        <option name="la">Los Angeles</option>
+                        <option name="virginia">Virginia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="language">Favorite Language: </label>
+                    <select name="language" class="form-control">
+                        <option value="Java">Java</option>
+                        <option value="Javascript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="C#">C#</option>
+                    </select>
+                </div>
+                <div class="form-group">   
+                    <label for="comments">Comment (optional):</label>
+                    <textarea name="comment" class="form-control" id="" cols="30" rows="5"></textarea>
+                </div>
+                <button class="btn btn-primary">Submit</button>
             </form>
         </div>
 
