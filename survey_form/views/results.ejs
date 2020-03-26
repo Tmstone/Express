@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <div>
+    <div class="container">
         <h3>Submitted Information</h3>
         <p>Name: <%= data.name %> </p> 
         <p>Dojo Name: <%= data.location %> </p>
@@ -15,7 +15,7 @@
         <p>Comment: <%= data.comment %> </p>
 
         <form action="/" method="GET">
-            <button>Go Back</button>
+            <button class="btn btn-success">Go Back</button>
         </form>
     </div>
 </body>
