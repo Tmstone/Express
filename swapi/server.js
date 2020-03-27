@@ -12,8 +12,12 @@ app.use(express.urlencoded({extended: true}));
 
 //get data
 app.get('/', (req, res) => {
-    console.log('index rendered')
     res.render('index');
+});
+app.get('/people', (req,res) => {
+    var data = "This is Star Wars people data";
+    console.log(data);
+    res.send(data);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -11,9 +11,10 @@
     <script>
         $(document).ready(function(){
             $('#peopleBtn').click(function(){
-                console.log('people button clicked');
+                $.get('/people', function(data) {
+                    console.log('Got response: ', data);
+                }/* add 'json' here */);
             });
-   
         });
     </script>
 </head>
@@ -36,6 +37,7 @@
                     </div>
                 </div>
             </div>
+            <div class="" id="data"></div>
         </div>
     </div>
 </body>
