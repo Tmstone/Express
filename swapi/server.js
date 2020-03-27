@@ -15,9 +15,13 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 app.get('/people', (req,res) => {
-    var data = "This is Star Wars people data";
-    console.log(data);
-    res.send(data);
+    var peoleData = "This is Star Wars people data";
+    console.log(peoleData);
+    res.send(peoleData);
 });
-
+app.get('/planets', (req,res) => {
+    var orbData = "This is Star Wars planet data";
+    console.log(orbData);
+    res.send(orbData);
+});
 app.listen(port, () => console.log(`Listening on port ${port}`));

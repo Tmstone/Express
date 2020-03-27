@@ -13,6 +13,13 @@
             $('#peopleBtn').click(function(){
                 $.get('/people', function(data) {
                     console.log('Got response: ', data);
+                    $('#data').html(data);
+                }/* add 'json' here */);
+            });
+            $('#planetBtn').click(function(){
+                $.get('/planets', function(data) {
+                    console.log('Got response: ', data);
+                    $('#data').html(data);
                 }/* add 'json' here */);
             });
         });
