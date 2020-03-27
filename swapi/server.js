@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended: true}));
 
 //get data
 app.get('/', (req, res) => {
+    console.log('index rendered')
     res.render('index');
 });
 
