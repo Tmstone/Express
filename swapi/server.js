@@ -21,11 +21,11 @@ app.get('/people', function(req,res){
     .then(data => {
         console.log(data);
         res.json(data);
-    })/*
+    })
     .catch(error => {
         console.log(error);
         res.json(error);
-    })*/
+    })
 });
 app.get('/planets', (req,res) => {
     var orbData = "This is Star Wars planet data";
