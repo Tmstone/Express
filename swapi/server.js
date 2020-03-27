@@ -7,7 +7,7 @@ const app = express();
 //add middleware
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-
+app.use(express.static(__dirname + '/static'));
 app.use(express.urlencoded({extended: true}));
 
 //get data
