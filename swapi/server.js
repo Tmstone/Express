@@ -14,10 +14,18 @@ app.use(express.urlencoded({extended: true}));
 app.get('/', (req, res) => {
     res.render('index');
 });
-app.get('/people', (req,res) => {
-    var peoleData = "This is Star Wars people data";
-    console.log(peoleData);
-    res.send(peoleData);
+app.get('/people', function(req,res){
+    //var peoleData = "This is Star Wars people data";
+    //console.log(peoleData);
+    axios.get('https://swapi.co/api/people/1/')
+    .then(data => {
+        console.log(data);
+        res.json(data);
+    })/*
+    .catch(error => {
+        console.log(error);
+        res.json(error);
+    })*/
 });
 app.get('/planets', (req,res) => {
     var orbData = "This is Star Wars planet data";
