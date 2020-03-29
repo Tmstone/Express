@@ -20,7 +20,8 @@ app.get('/people', function(req,res){
     axios.get('https://swapi.co/api/people/1/')
     .then(data => {
         console.log(data);
-        res.json(data);
+        people = data;
+        res.json({people: data});
     })
     .catch(error => {
         console.log(error);
