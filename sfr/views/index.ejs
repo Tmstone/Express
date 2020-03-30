@@ -13,21 +13,31 @@
         </div>
         <div>
             <form action="/" id="posting_form" method="POST">
-                <div>
-                    <label for="">Your Name</label>
-                    <input type="text" name="name" id="name">
+                <div class="form-group">
+                    <label for="name">Your Name: </label>
+                    <input type="text" class="form-control" name="name" id="name">
                 </div>
-                <div>
-                    <select name="" id="">
-                        <option value=""></option>
+                <div class="form-group">
+                    <label for="location">Dojo Location:</label>
+                    <select name="location" class="form-control" id="location">
+                        <option value="Dallas, TX">Dallas, TX</option>
+                        <option value="Mountain View, CA">Mountain View, CA</option>
+                        <option value="Online">Online</option>
+                        <option value="Seattle, WA">Seattle, WA</option>
+                        <option value="Tyson's Corner, VA">Tyson's Corner, VA</option>
                     </select>
                 </div>
-                <div>
-                    <select name="" id="">
-                        <option value=""></option>
+                <div class="form-group">
+                    <label for="location">Favorite Language:</label>
+                    <select name="language" class="form-control" id="language">
+                        <option value="c#">c#</option> 
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="Ruby">Ruby</option>
                     </select>
                 </div>
-                <button type="button">Submit</button>
+                <button type="button" class="btn btn-success">Submit</button>
             </form>
         </div>
     </div>
