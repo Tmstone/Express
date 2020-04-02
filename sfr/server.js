@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.port || 8000;
+const port = process.env.port || 3000;
 const io = require('socket.io')();
 const app = express();
 //var num = Math.floor(Math.random() * 1000) + 1 ;
