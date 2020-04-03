@@ -2,7 +2,7 @@ const express = require('express');
 const port = process.env.port || 8000;
 const app = express();
 //var num = Math.floor(Math.random() * 1000) + 1 ;
-var counter = 0;
+//var counter = 0;
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
