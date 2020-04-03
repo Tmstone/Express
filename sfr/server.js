@@ -15,6 +15,7 @@ const io = require('socket.io')(server);
 //socket function here 
 io.on('connection', socket => {
     console.log('incoming socket connection');
+    //getting the data
     socket.on('posting_form', function(data){
         console.log(data);
     });
