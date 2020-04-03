@@ -12,6 +12,16 @@
         $(document).ready(function(){
             var socket = io();
             
+            $('#posting_form').submit(function(e) {
+                e.preventDefault();
+                socket.emit('posting_form', {
+                    name: $('#name').val(), 
+                    location: $('#location').val(),
+                    language: $('#language').val()
+                    
+                });
+                console.log('form posted')
+            });
                    
         });
     </script>
@@ -47,7 +57,7 @@
                         <option value="Ruby">Ruby</option>
                     </select>
                 </div>
-                <button type="button" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
             </form>
         </div>
     </div>

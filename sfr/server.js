@@ -6,6 +6,8 @@ var counter = 0;
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
+app.use(express.urlencoded({extended: true}));
+
 //app.use(express.static(__dirname + '/static'));
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 const io = require('socket.io')(server);
@@ -13,6 +15,9 @@ const io = require('socket.io')(server);
 //socket function here 
 io.on('connection', socket => {
     console.log('incoming socket connection');
+    socket.on('posting_form', function(data){
+        console.log(data);
+    });
 })
 app.get('/', (req, res) => {
     var num = Math.floor(Math.random() * 1000) + 1 ;
