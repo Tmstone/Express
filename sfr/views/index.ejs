@@ -22,7 +22,14 @@
                 });
                 console.log('form posted')
             });
-                   
+               socket.on('send_message', function(data){
+                   $('#message').html("You sent the following information to the server : " + JSON.stringify(data.response));
+                   console.log(data);
+               })
+               socket.on('random_num', function(data){
+                $('#number').html("Your lucky number emitted by the server is " + JSON.stringify(data.response));
+               });
+
         });
     </script>
 </head>
@@ -33,7 +40,7 @@
         </div>
         <div class="section">
             <div id="message"></div>
-            <div id="numner"></div>
+            <div id="number"></div>
         </div>
         <div class="section">
             <form action="" id="posting_form">
@@ -63,7 +70,7 @@
                 </div>
                 <div class="form-group">
                     <lable for="comment">Comment: </lable>
-                    <textarea name="comment" class="form-control" id="comment" cols="30" rows="10"></textarea>
+                    <textarea name="comment" class="form-control" id="comment" cols="30" rows="4"></textarea>
                 </div>
                 <button type="submit" class="btn btn-success">Submit</button>
             </form>

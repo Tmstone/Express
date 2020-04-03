@@ -1,8 +1,6 @@
 const express = require('express');
 const port = process.env.port || 8000;
 const app = express();
-//var num = Math.floor(Math.random() * 1000) + 1 ;
-//var counter = 0;
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -18,10 +16,14 @@ io.on('connection', socket => {
     //getting the data
     socket.on('posting_form', function(data){
         console.log(data);
+        //get random number
+        var num = Math.floor(Math.random() * 1000) + 1 ;
+        //send data back
+        socket.emit('send_message', {response: data});
+            socket.emit('random_num', {response: num});
     });
 })
 app.get('/', (req, res) => {
-    var num = Math.floor(Math.random() * 1000) + 1 ;
-    console.log(num);
+    //console.log(num);
     res.render('index');
 });
