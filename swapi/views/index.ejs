@@ -12,14 +12,14 @@
         $(document).ready(function(){
             $('#peopleBtn').click(function(){
                 $.get('/people', function(data) {
-                    console.log('Got response: ', data);
+                    console.log('Got response: ', JSON.stringify(data.response));
                     //$('#data').html(data);
                 },'json');
             });
             $('#planetBtn').click(function(){
                 $.get('/planets', function(data) {
                     console.log('Got response: ', data);
-                    $('#data').html(data);
+                    $('#data').html('Hello! '+  data);
                 }/* add 'json' here */);
             });
         });
