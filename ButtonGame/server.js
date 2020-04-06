@@ -8,6 +8,10 @@ app.set('views', __dirname + '/views');
 const server = app.listen(port, ()=> console.log(`Listening on port ${port}`));
 const io = require('socket.io')(server);
 
+io.on('connection', socket => {
+    console.log('Incomming socket connection');
+})
+
 app.get('/', (req, res) => {
     //console.log(num);
     res.render('index');
