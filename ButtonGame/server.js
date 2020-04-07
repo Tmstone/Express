@@ -15,6 +15,10 @@ io.on('connection', socket => {
     socket.on('button_clicked', function() {
         io.emit('numberUpdate', ++count)
     });
+    socket.on('reset', function () {
+        count = 0;
+        io.emit('numberUpdate', count);
+    })
 });
 
 app.get('/', (req, res) => {

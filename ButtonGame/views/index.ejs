@@ -15,11 +15,12 @@
                 socket.emit('button_clicked');
                 console.log('epic button clicked');
             });
+            $('#reset').click(function () {
+                socket.emit('reset');
+                console.log('reset button clicked');
+            });
             socket.on('numberUpdate', function(number) {
                 $('#update').text(number);
-            });
-            $('#reset').click(function () {
-                console.log('reset button clicked');
             });
         });
     </script>
