@@ -9,7 +9,12 @@ const server = app.listen(port, ()=> console.log(`Listening on port ${port}`));
 const io = require('socket.io')(server);
 
 io.on('connection', socket => {
+    let count = 0;
     console.log('Incomming socket connection');
+
+    socket.on('button_clicked', function() {
+        io.emit('numberUpdate', ++count)
+    });
 });
 
 app.get('/', (req, res) => {

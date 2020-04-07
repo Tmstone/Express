@@ -12,7 +12,11 @@
             var socket = io();
 
             $('#epic').click(function() {
+                socket.emit('button_clicked');
                 console.log('epic button clicked');
+            });
+            socket.on('numberUpdate', function(number) {
+                $('#update').text(number);
             });
             $('#reset').click(function () {
                 console.log('reset button clicked');
@@ -23,7 +27,7 @@
 <body>
     <div class="container">
         <h1>The Epic Button Game</h1>
-        <p>The button has been pushed <span>0</span> time(s).</p>
+        <p>The button has been pushed <span id="update">0</span> time(s).</p>
         <button type="button" class="btn btn-primary" id="epic">Push Button</button>
 
         <button type="button" class="btn btn-warning" id="reset">reset</button>
