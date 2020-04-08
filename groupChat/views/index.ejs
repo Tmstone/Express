@@ -10,6 +10,9 @@
     <script>
         $(document).ready(function(){
             var socket = io();
+            //get new user
+            var newUser;
+            
             $('#getName').submit(function(e) {
                 e.preventDefault();
                 socket.emit('getName', {
@@ -17,7 +20,6 @@
                 })
                 console.log('form posted');
             })
-            
         });
     </script>
 </head>
