@@ -20,7 +20,7 @@ const io = require('socket.io')(server);
 
 app.get('/', (req, res) => {
     console.log('Value of name in session: ', req.session);
-    res.render('chat');
+    res.render('index');
 });
 
 //socket function here
