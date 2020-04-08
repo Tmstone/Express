@@ -19,5 +19,15 @@ const io = require('socket.io')(server);
 
 
 app.get('/', (req, res) => {
+    console.log('Value of name in session: ', req.session);
     res.render('index');
 });
+
+//socket function here
+io.on('connection', socket => {
+    console.log('incoming socket connection');
+    socket.on('get_name', function(data){
+        console.log(data);
+    })
+
+})
