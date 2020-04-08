@@ -10,7 +10,14 @@
     <script>
         $(document).ready(function(){
             var socket = io();
-            $()
+            $('#getName').submit(function(e) {
+                e.preventDefault();
+                socket.emit('getName', {
+                    name: $('#name').val()
+                })
+                console.log('form posted');
+            })
+            
         });
     </script>
 </head>
@@ -18,7 +25,7 @@
     <div class="container">
         <h1>Group Chat</h1>
         <div>
-            <form action="">
+            <form action="/chat" id="getName" method="POST">
                 <p>The page at https://localhost says:</p>
                 <div class="form-group">
                     <label for="name">Your name: </label>

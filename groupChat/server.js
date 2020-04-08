@@ -26,8 +26,15 @@ app.get('/', (req, res) => {
 //socket function here
 io.on('connection', socket => {
     console.log('incoming socket connection');
-    socket.on('get_name', function(data){
+    socket.on('getName', function(data){
         console.log(data);
+         
     })
 
 })
+/*
+app.post('/chat', (req, res) => {
+ req.session.name = req.body.name;
+ res.render('chat');
+});
+*/
