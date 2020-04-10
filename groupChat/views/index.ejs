@@ -18,14 +18,8 @@
                 console.log(name);
             };
             newUser();
+
             
-            $('#getName').submit(function(e) {
-                e.preventDefault();
-                socket.emit('getName', {
-                    name: $('#name').val()
-                })
-                console.log('form posted');
-            })
         });
     </script>
 </head>
@@ -33,14 +27,14 @@
     <div class="container">
         <h1>Group Chat</h1>
         <div>
-            <form action="/chat" id="getName" method="POST">
-                <p>The page at https://localhost says:</p>
+            <div id="error"></div>
+            <p>Conversation Board</p>
+            <div id="messages"></div>
+            <form id="newMessage">
                 <div class="form-group">
-                    <label for="name">Your name: </label>
-                    <input type="text" class="form-control" id="name" name="name">
+                    <input type="text" class="form-control" id="message" placeholder="Enter your message here">
                 </div>
-                <button class="btn btn-danger" id="cancel">Cancel</button>
-                <button class="btn btn-primary" id="submit">Ok</button>
+                <button class="btn btn-primary" id="submit">Send</button>
             </form>
         </div>
     </div>
