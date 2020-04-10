@@ -14,11 +14,11 @@
             var currentUser
             var newUser = function(){
                 var name = prompt('Enter your name to join the chat:');
-                socket.emit('page_load', {user: name});
+                socket.emit('newPage', {user: name});
                 console.log(name);
             };
             newUser();
-
+            
             
         });
     </script>

@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 //socket function here
 io.on('connection', socket => {
     console.log('incoming socket connection');
-    socket.on('getName', function(data){
+    socket.on('newPage', function(data){
         console.log(data);
          
     })
