@@ -7,8 +7,8 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.urlencoded({extended: true}));
 
-var users = {};
-var message = {};
+const users = [];
+const messages = [];
 
 
 
