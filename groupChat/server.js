@@ -29,9 +29,12 @@ io.on('connection', socket => {
         console.log(data);
     users.push(data);     
     })
-
+    /*socket.on('currentUser', function(data){
+        for (let x = 0; x < users.length; x++) {
+            console.log(users[x]);
+        }*/
+        io.emit('postUsers', {user: users.data});
+        console.log(users)
+    //})
 });
 
-for (let x = 0; x < users.length; x++) {
-    console.log(users[x]);
-}
