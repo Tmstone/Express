@@ -18,10 +18,15 @@
                 console.log(name);
             };
             newUser();
+            
+            socket.on('currentUser', function(data){
+                $('#error').html(data.error);
+                newUser();
+            })
 
             socket.on('postUsers',function(data){
                 console.log(data)
-                $('#messages').append('<p>' + data.users + '</p>');
+                //$('#messages').append('<p>' + data.users + '</p>');
                 
                     
             })

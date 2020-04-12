@@ -43,7 +43,7 @@ io.on('connection', socket => {
     })
     //socket.on('currentUser', function(data){
        
-        io.emit('postUsers', {user: users});
-        console.log(users)
+        io.emit('postUsers', {user: users.data});
+        console.log(users.data)
     //})
 });
