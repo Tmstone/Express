@@ -10,7 +10,14 @@ app.use(express.urlencoded({extended: true}));
 const users = [];
 const messages = [];
 
-
+function isUser(user) {
+    for (let x = 0; x < users.length; x++) {
+    if (user == users[x]) {
+        return true;
+        }   
+    }
+    return false;
+}
 
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 const io = require('socket.io')(server);
@@ -27,14 +34,16 @@ io.on('connection', socket => {
     console.log('incoming socket connection');
     socket.on('newPage', function(data){
         console.log(data);
-    users.push(data);     
+        const currentUser = isUser(data.user);
+    
+    if (!currentUser) {
+        users.push(data);
+        }    
+         
     })
-    /*socket.on('currentUser', function(data){
-        for (let x = 0; x < users.length; x++) {
-            console.log(users[x]);
-        }*/
-        io.emit('postUsers', {user: users.data});
+    //socket.on('currentUser', function(data){
+       
+        io.emit('postUsers', {user: users});
         console.log(users)
     //})
 });
-
