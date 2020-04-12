@@ -27,7 +27,11 @@ io.on('connection', socket => {
     console.log('incoming socket connection');
     socket.on('newPage', function(data){
         console.log(data);
-         
+    users.push(data);     
     })
 
 });
+
+for (let x = 0; x < users.length; x++) {
+    console.log(users[x]);
+}
