@@ -35,12 +35,13 @@ io.on('connection', socket => {
     socket.on('newPage', function(data){
         console.log(data);
         const currentUser = isUser(data.user);
-        //const event = currentUser ? '': '';
-        const data = currentUser ? { error: 'This user already exsts'}: {cuurent_user: data.user, messages: messages};
-    if (!currentUser) {
+        const event = currentUser ? 'currentUser': 'getMessages';
+        const info = currentUser ? { error: 'This user already exsts'}: {cuurent_user: data.user, messages: messages};
+    
+        if (!currentUser) {
         users.push(data.user);
         }    
-         
+       socket.emit(event, info);  
     })
     //socket.on('currentUser', function(data){
        
