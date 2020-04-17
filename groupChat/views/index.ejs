@@ -26,11 +26,12 @@
 
             socket.on('postUsers',function(data){
                 console.log(data)
-                $('#messages').append('<p>' + data.users + '</p>');
-                
-                    
+                $('#messages').append('<p>' + data.users + '</p>');       
             })
-            
+            $('#newMessage').submit(function(){
+                socket.emit('newMessage', {message: $('#messsage').val(), user: currentUser})
+                return false;
+            })
         });
     </script>
 </head>
