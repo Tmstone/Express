@@ -36,7 +36,7 @@ io.on('connection', socket => {
         console.log(data);
         const currentUser = isUser(data.user);
         const event = currentUser ? 'currentUser': 'getMessages';
-        const info = currentUser ? { error: 'This user already exsts'}: {cuurent_user: data.user, messages: messages};
+        const info = currentUser ? { error: 'This user already exsts'}: {current_user: data.user, messages: messages};
     
         if (!currentUser) {
         users.push(data.user);
