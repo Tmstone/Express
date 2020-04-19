@@ -42,10 +42,11 @@ io.on('connection', socket => {
         users.push(data.user);
         }    
        socket.emit(event, info);  
-    })
-    socket.on('currentUser', function(data){
-       
-        io.emit('postUsers', {user: users.data});
+    });
+
+    socket.on('newMessage', function(data){
+        messages.push({name: data.user, messsage: data.message});
+        io.emit('postUsers', {newMessage: data.message, user: users.data});
         console.log(users.data)
     })
 });
