@@ -23,6 +23,9 @@
                 $('#error').html(data.error);
                 newUser();
             })
+            socket.on('getMessages', function(data){
+                $('#error').html('')//reset error
+            })
 
             socket.on('postUsers',function(data){
                 console.log(data)
