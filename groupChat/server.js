@@ -22,12 +22,10 @@ function isUser(user) {
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 const io = require('socket.io')(server);
 
-
 app.get('/', (req, res) => {
     console.log('page rendered');
     res.render('index');
 });
-
 
 //socket function here
 io.on('connection', socket => {
@@ -36,7 +34,7 @@ io.on('connection', socket => {
         console.log(data);
         const currentUser = isUser(data.user);
         const event = currentUser ? 'currentUser': 'getMessages';
-        const info = currentUser ? { error: 'This user already exsts'}: {currentUser: data.user, messages: messages};
+        const info = currentUser ? { error: 'This user already exsts'} : {currentUser: data.user, messages: messages};
     
         if (!currentUser) {
         users.push(data.user);
