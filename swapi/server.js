@@ -20,16 +20,23 @@ app.get('/people', function(req,res){
     //res.send(peoleData);
    axios.get('https://swapi.dev/api/people/1/')
     .then(data => {
-        console.log(data);
+        //console.log(data);
         people = data;
-        console.log('People data', people.data.name)
-        //res.status('people').json({response: data});
+        //console.log('People data', people.data.name)
+        res.json(people.data);
     })
     .catch(error => {
         console.log(error);
-        //res.json(error);
+        res.json(error);
     })
 });
+app.get('/test', function(req, res){
+    var myJson = {};
+    myJson.name = 'Mike';
+    myJson.age = '25';
+    console.log(myJson);
+    res.json(myJson)
+})
 app.get('/planets', (req,res) => {
     var orbData = "This is Star Wars planet data";
     console.log(orbData);

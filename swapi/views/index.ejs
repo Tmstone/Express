@@ -14,15 +14,24 @@
                 $.get('/people', function(data) {
                     //console.log('Got response: ', JSON.stringify(data.response));
                     console.log('Got response: ', data); 
-                    $('#data').html(data);
+                    //$('#data').html(data);
+                    postData(data)
                },/*'json'*/);
             });
             $('#planetBtn').click(function(){
                 $.get('/planets', function(data) {
                     console.log('Got response: ', data);
-                    $('#data').html('Hello! '+  data);
+                    postData(data)//$('#data').html('Hello! '+  data);
                 }/* add 'json' here */);
             });
+            $('#jsonTest').click(function(){
+                $.get('/test', function(data){
+                    postData(data)
+                })
+            });
+            function postData(data) {
+                $('#data').html('Hello! '+  data.name);
+            }
         });
     </script>
 </head>
@@ -42,6 +51,11 @@
                 <div class="col-4">
                     <div>
                         <button type="button" class="btn btn-success" id="planetBtn">Planet</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div>
+                        <button type="button" class="btn btn-warning" id="jsonTest">Test</button>
                     </div>
                 </div>
             </div>
