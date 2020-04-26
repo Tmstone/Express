@@ -32,8 +32,15 @@ app.get('/people', function(req,res){
     })
 });
 app.get('/planets', (req,res) => {
-    var orbData = "This is Star Wars planet data";
+    /*var orbData = "This is Star Wars planet data";
     console.log(orbData);
-    res.send(orbData);
+    res.send(orbData);*/
+    axios.get('https://swapi.dev/api/planets/')
+    .then(data => {
+
+    })
+    .catch(error => {
+        
+    })
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));
