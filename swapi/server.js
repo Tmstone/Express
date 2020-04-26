@@ -18,7 +18,7 @@ app.get('/people', function(req,res){
     //var peoleData = "This is Star Wars people data";
     //console.log(peoleData);
     //res.send(peoleData);
-   axios.get('https://swapi.co/api/people/1/')
+   axios.get('https://swapi.dev/api/people/1/')
     .then(data => {
         console.log(data);
         //people = data;
