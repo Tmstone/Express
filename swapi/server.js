@@ -18,10 +18,11 @@ app.get('/people', function(req,res){
     //var peoleData = "This is Star Wars people data";
     //console.log(peoleData);
     //res.send(peoleData);
-   axios.get('https://swapi.dev/api/people/1/')
+   axios.get('https://swapi.dev/api/people/')
     .then(data => {
         //console.log(data);
         people = data;
+        console.log(people.data);
         //console.log('People data', people.data.name)
         res.json(people.data);
     })
@@ -30,13 +31,6 @@ app.get('/people', function(req,res){
         res.json(error);
     })
 });
-app.get('/test', function(req, res){
-    var myJson = {};
-    myJson.name = 'Mike';
-    myJson.age = '25';
-    console.log(myJson);
-    res.json(myJson)
-})
 app.get('/planets', (req,res) => {
     var orbData = "This is Star Wars planet data";
     console.log(orbData);
