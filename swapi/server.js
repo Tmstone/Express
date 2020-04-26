@@ -21,7 +21,8 @@ app.get('/people', function(req,res){
    axios.get('https://swapi.dev/api/people/1/')
     .then(data => {
         console.log(data);
-        //people = data;
+        people = data;
+        console.log('People data', people.data.name)
         //res.status('people').json({response: data});
     })
     .catch(error => {
