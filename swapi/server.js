@@ -22,7 +22,7 @@ app.get('/people', function(req,res){
     .then(data => {
         //console.log(data);
         people = data;
-        console.log(people.data);
+        console.log('People data received');
         //console.log('People data', people.data.name)
         res.json(people.data);
     })
@@ -38,7 +38,7 @@ app.get('/planets', (req,res) => {
     axios.get('https://swapi.dev/api/planets/')
     .then(data => {
         planets = data;
-        console.log(planets.data)
+        console.log('Planets data received');
         res.json(planets.data);
     })
     .catch(error => {
