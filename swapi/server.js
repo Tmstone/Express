@@ -37,12 +37,13 @@ app.get('/planets', (req,res) => {
     res.send(orbData);*/
     axios.get('https://swapi.dev/api/planets/')
     .then(data => {
-    planets = data;
-    console.log(plnates.data)
-
+        planets = data;
+        console.log(planets.data)
+        res.json(planets.data);
     })
     .catch(error => {
-
+        console.log(error);
+        res.json(error);
     })
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));
