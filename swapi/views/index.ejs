@@ -24,10 +24,9 @@
             });
             function postData(data) {
                 names = data.results;
-                //$('#data').html(data.results[7].name);
 
                 for (x = 0; x < names.length; x++) {
-                    $('#data').html(names[x].name);  
+                    $('#data').append(names[x].name);  
                 }
                 //$('#data').html('<a href="data.next">Next</a>');
 
