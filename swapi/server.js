@@ -15,9 +15,7 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 app.get('/people', function(req,res){
-    //var peoleData = "This is Star Wars people data";
-    //console.log(peoleData);
-    //res.send(peoleData);
+    //get data from API with promises
    axios.get('https://swapi.dev/api/people/')
     .then(data => {
         //console.log(data);
@@ -32,9 +30,7 @@ app.get('/people', function(req,res){
     })
 });
 app.get('/planets', (req,res) => {
-    /*var orbData = "This is Star Wars planet data";
-    console.log(orbData);
-    res.send(orbData);*/
+    //get data from API with promises
     axios.get('https://swapi.dev/api/planets/')
     .then(data => {
         planets = data;
