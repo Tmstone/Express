@@ -21,7 +21,7 @@ app.get('/people', function(req,res){
         //console.log(data);
         people = data;
         console.log('People data received');
-        //console.log('People data', people.data.name)
+      
         res.json(people.data);
     })
     .catch(error => {
