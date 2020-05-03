@@ -54,8 +54,9 @@
                 </div>
             </div>
             <div class="" id="data">
-                <p></p>
-
+                <% for (x = 0; x < names.length; x++) {%>
+                <p><%= names[x].name %></p>
+                    <% } %>
             </div>
         </div>
     </div>
