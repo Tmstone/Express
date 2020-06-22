@@ -31,7 +31,7 @@ console.log(content)
 });
 
 // destructuring mongoose
-/*
+
 const m = {
     Schema: function () {},
     models: {}
@@ -40,4 +40,3 @@ const m = {
 const { models, Schema: AltSchema } = m;
 
 console.log('Schema', Schema, models, AltSchema);
-*/
