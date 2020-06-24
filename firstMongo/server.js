@@ -26,8 +26,10 @@ const animal = new Animal ({
 
 //console.log(animal);
 
-animal.save(function (...content) {
-console.log(content)
+animal.save()
+.then(pet =>  console.log(pet)) 
+.catch(error => {
+console.log(error);
 });
 
 // destructuring mongoose
