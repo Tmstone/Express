@@ -9,7 +9,11 @@ mongoose.connection.on('connected', () => console.log('Mongodb connected'));
 
 
 const AnimalSchema = new Schema ({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        trim: true,
+    },
     age: Number,
     legs: Number,
     isPet: Boolean,
